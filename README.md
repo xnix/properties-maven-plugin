@@ -1,1 +1,1 @@
-# properties-maven-plugin
+# depinfo-maven-plugin
