@@ -13,7 +13,7 @@ class Property {
     }
 
     static Property fromDependency(Dependency dependency) {
-        return new Property(createPropertyKey(dependency), dependency.getVersion());
+        return new Property(createVersionKey(dependency), dependency.getVersion());
     }
 
     String getKey() {
@@ -24,7 +24,7 @@ class Property {
         return value;
     }
 
-    private static String createPropertyKey(Dependency dependency) {
-        return dependency.getGroupId() + ":" + dependency.getArtifactId();
+    private static String createVersionKey(Dependency dependency) {
+        return dependency.getGroupId() + ":" + dependency.getArtifactId() + ":" + dependency.getType() + ":version";
     }
 }
